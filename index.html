@@ -32,6 +32,12 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 padding:0
             }
 
+            h1 {
+                font-family:Arial, Helvetica, sans-serif;
+                font-size: max(5vw, 27px);
+                color: rgb(236, 236, 236);
+            }
+
             .content {
                 margin:10vw; 
                 margin-top:110px;
@@ -60,21 +66,31 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 top: 0px;
                 left: 0px;
                 right:0px;
-                background: linear-gradient(to right, rgb(203, 208, 235), rgb(168, 168, 168));
+                background: linear-gradient(to right, rgb(255, 255, 255), rgb(168, 168, 168));
             }
 
         </style>
     </head>
     <body>
-        <ul class="navbar">
+        <ul class="navbar" style="z-index:10">
             <li><img src="scaled.png?" style="top:0; left:0; margin: 1.5vh; height:7vh; width:auto;"></li>
         </ul>
-        <div id="startImage" style="display:flex; justify-content: center;">
-            <!--https://www.w3schools.com/css/css3_image_center.asp and https://forum.freecodecamp.org/t/my-background-image-isnt-covering-the-full-width-of-the-page/208676-->
-            <img src="mCyro.png?" class="cover viewport"style="position:static;">
+        <div id="landingPageContainer" style="position:static; z-index:1;">
+            <div id="startImage" style="display:flex; justify-content: center;">
+                <!--https://www.w3schools.com/css/css3_image_center.asp and https://forum.freecodecamp.org/t/my-background-image-isnt-covering-the-full-width-of-the-page/208676-->
+                <img src="mCyro.png?" class="cover viewport">
+            </div>
+            <div id="landingtext" style="position:absolute; top: 20vh; right: 0px; text-align:right; margin-right:10px;">
+                <h1 id="title" style="/*background-color: rgba(0, 0, 0, 0.247);*/ 
+                margin-bottom:0px;">Lorem ipsum,</h1>
+                <h2 style="/*background-color: rgba(0, 0, 0, 0.247);*/ color:rgb(236, 236, 236); margin-top: max(0.3vw,3px); font-family:Arial, Helvetica, sans-serif;
+                font-size: max(4vw, 21px); margin-bottom:0;">dolore semet.</h2>
+                <p style="/*background-color: rgba(0, 0, 0, 0.247);*/ color:rgb(236, 236, 236); margin-top: 20px; margin-left: 55%;
+                font-family:Arial, Helvetica, sans-serif; font-size: 17px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed lectus augue. In ac urna nibh. Vivamus facilisis fringilla est, et dapibus lacus blandit non. Aliquam ut velit non velit tristique consequat</p>
+            </div>
         </div>
 
-        <p class="content">hello world</p>
+        <p class="content">Hello world!</p>
         
     </body>
 </html>
