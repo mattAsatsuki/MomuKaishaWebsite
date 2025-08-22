@@ -24,31 +24,57 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style> /*haha web deployment made very, very overcomplicated...*/
-            body {
-                background-color:rgb(236, 236, 236);
-                margin:10vw;
-                margin-top:100px;
+            html, body { /*https://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll */
+                max-width: 100%;
+                overflow-x: hidden;
+                background-color:rgb(236, 236, 236); 
+                margin:0;
+                padding:0
             }
 
-            ul.navbar { /*taken from roadtogrambys-communal.cc*/
+            .content {
+                margin:10vw; 
+                margin-top:110px;
+            }
+
+            .cover {
+                object-fit: cover;
+            }
+
+            .viewport {
+                margin:0px;
+                padding:0px;
+                height: 100vh;
+                width: 100%;
+            }
+
+            ul.navbar { /*taken from https://roadtogrambys-communal.cc */
                 list-style-type: none;
                 width: auto;
-                height: 60px;
+                height: 10vh;
                 position: fixed;
                 margin-top: 0px; /*oml i hate css even if it's c based im going to kill i had to figure this solution out BY MYSELF*/
                 margin-left: 0px; /*stack overflow SUCKS. IT WAS SO SIMPLE GRAAAHHHH*/
-                margin: 0;
-                padding: 0;
-                top: 0;
-                left: 0;
-                right:0;
-                background: linear-gradient(to right, rgb(181, 185, 207), rgb(168, 168, 168));
+                margin: 0px;
+                padding: 0px;
+                top: 0px;
+                left: 0px;
+                right:0px;
+                background: linear-gradient(to right, rgb(203, 208, 235), rgb(168, 168, 168));
             }
+
         </style>
     </head>
     <body>
-        <ul class="navbar"></ul>
-        <p>hello world</p>
+        <ul class="navbar">
+            <li><img src="scaled.png?" style="top:0; left:0; margin: 1.5vh; height:7vh; width:auto;"></li>
+        </ul>
+        <div id="startImage" style="display:flex; justify-content: center;">
+            <!--https://www.w3schools.com/css/css3_image_center.asp and https://forum.freecodecamp.org/t/my-background-image-isnt-covering-the-full-width-of-the-page/208676-->
+            <img src="mCyro.png?" class="cover viewport"style="position:static;">
+        </div>
+
+        <p class="content">hello world</p>
         
     </body>
 </html>
