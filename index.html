@@ -88,9 +88,14 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 <p style="/*background-color: rgba(0, 0, 0, 0.247);*/ color:rgb(236, 236, 236); margin-top: 20px; margin-left: 55%;
                 font-family:Arial, Helvetica, sans-serif; font-size: 17px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed lectus augue. In ac urna nibh. Vivamus facilisis fringilla est, et dapibus lacus blandit non. Aliquam ut velit non velit tristique consequat</p>
             </div>
+            <div id="toFirstContent" style="position:absolute; bottom: 1vh; left: calc(50vw - 25px)">
+                <button style="all:unset; cursor: pointer;" onClick="document.getElementById('firstContent').scrollIntoView();">
+                    <img title="About Us" src="favicon.png?" style="height: auto; width: 50px">
+                </button>
+            </div>
         </div>
 
-        <p class="content">Hello world!</p>
+        <p id="firstContent" class="content">Hello world!</p>
         
     </body>
 </html>
