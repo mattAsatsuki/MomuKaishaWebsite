@@ -40,11 +40,11 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
 
             h1.standard {
                 color: #2b2d42ff;
-                margin-top:110px;
+                margin-top:5vw;
+                margin-bottom: 0.7vw;
             }
 
             p.standard {
-                margin-top: 30px;
                 font-family:Arial, Helvetica, sans-serif; 
                 font-size: 17px;
                 color: black;
@@ -82,16 +82,48 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 background: linear-gradient(to right, rgb(255, 255, 255), rgb(197, 197, 197));
             }
 
+            .footbar { /*taken from https://roadtogrambys-communal.cc */
+                width: auto;
+                height: 4.5vh;
+                position: fixed;
+                margin-top: 0px; /*oml i hate css even if it's c based im going to kill i had to figure this solution out BY MYSELF*/
+                margin-left: 0px; /*stack overflow SUCKS. IT WAS SO SIMPLE GRAAAHHHH*/
+                margin: 0px;
+                padding: 0px;
+                bottom: 0px;
+                left: 0px;
+                right:0px;
+                background: rgb(236, 236, 236); ;
+            }
+
+            .blog {
+                /*display:flex; 
+                justify-content: center;*/
+                margin-top:1vh;
+                margin-left: 19vw;
+                margin-right:19vw;
+                background: linear-gradient(rgb(86, 89, 129), #2b2d42ff);
+                text-wrap: pretty; /*double check this one, chief*/
+                /*btw a float: right/left/inherit; would let text flow aorund this while justifying it to an aside*/
+                width:auto;
+            }
+
             .select:hover {
                 text-decoration: underline;
             }
-
         </style>
+
+        <script>
+            $(function(){ //prepping for async. blog posting infrastructure
+                $("#blogContent").load("blog.html"); 
+            });
+        </script>
     </head>
     <body>
         <ul class="navbar" style="z-index:10">
             <li><img src="scaled.png?" style="top:0; left:0; margin: 1.5vh; height:7vh; width:auto;"></li>
-            <li style="position: absolute; top:0; right:0; margin: 2vh;">
+            <li style="display:none; /*make display:none; as needed for deployability*/
+            position: absolute; top:0; right:0; margin: 2vh;">
                 <p class="standard" style="font-size: 2vh; margin:0; color:#2b2d42ff;">
                     Inquire at <em>business@momukaisha.com</em>
                 </p>
@@ -115,18 +147,33 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 </button>
             </li>
         </ul>
-        <div id="footer" style="display: none; z-index:8;">
-            <p style="
-                text-align: center;
-                position: fixed;
-                bottom: 0px;
-                width: 100%;
-                margin-bottom: 5px;
-                margin-left: 0px;
-                font-size: 15px;
-                font-family: Arial, Helvetica, sans-serif;
-                ">MOMU ERGONOMIC DESIGN 2025</p>
-        </div> <!--removed from document flow-->
+        <div id="footer" class="footbar" style="z-index:8; display:flex; justify-content: center;">
+            <p class="standard" style="display: none; position: absolute;text-align: right; right:0px; font-size: 2vh; margin:0; margin-right: 1vw; margin-top:1.6vh; color:#2b2d42ff;">
+                Inquire at <em>business@momukaisha.com</em>
+            </p>
+            <div id="quickies" style="position:absolute; width:auto;">
+                <!--
+                <button id="abtQuick" style="all:unset; cursor: pointer; margin-left: 1vw;" 
+                    onClick="document.getElementById('aboutUs').scrollIntoView();">
+                        <p class="select standard" style="font-size: 3vh; margin:0; margin-top:1vh; color: #2b2d42ff;">
+                        <b>About Us</b>
+                        </p>
+                </button>
+                -->
+                <button id="owkQuick" style="display: block; all:unset; cursor: pointer;" 
+                    onClick="document.getElementById('ourWork').scrollIntoView();">
+                        <p class="select standard" style="font-size: 3vh; margin:0; margin-right:4vw; margin-top:1vh; color: #2b2d42ff;">
+                        <b>Services</b>
+                        </p>
+                </button>
+                <button id="srvQuick" style="display: block; all:unset; cursor: pointer;" 
+                    onClick="document.getElementById('ourServices').scrollIntoView();">
+                        <p class="select standard" style="font-size: 3vh; margin:0; margin-top:1vh; color: #2b2d42ff;">
+                        <b>Contact Us</b>
+                        </p>
+                </button>
+            </div>
+        </div>
         <div id="landingPageContainer" style="position:relative; z-index:9;">
             <div id="startImage" style="display:flex; justify-content: center;">
                 <!--https://www.w3schools.com/css/css3_image_center.asp and https://forum.freecodecamp.org/t/my-background-image-isnt-covering-the-full-width-of-the-page/208676-->
@@ -152,8 +199,17 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
         </div>
 
         <div id="aboutUs" style="z-index:1;">
-            <h1 class="standard content">Ipsum Lorem</h1>
-            <p class="standard content">Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.</p>
+            <h1 class="standard content">About MOMU</h1>
+            <p class="standard content" style="margin-bottom:1vh;">
+                Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+            </p>
+            <div id="siteBlog" class="blog">
+                <!--something be weird with top margin and idk what that is-->
+                <h1 style="display:block; text-align: center; padding-top: 2vh; font-size: max(3vw, 20px); margin-bottom: 1.2vw;">2025 Progress Report</h1>
+                <p class="content standard" style="display:block; margin-left: 5vw; margin-right: 5vw; margin-top: 0px; padding-bottom:10px; color:rgb(236, 236, 236);">
+                    Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+                </p>
+            </div>
         </div>
         <div id="ourWork">
 
@@ -161,5 +217,8 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
         <div id="ourServices">
 
         </div>
+
+        <!--make room for the footer!-->
+        <br><br><br><br>
     </body>
 </html>
