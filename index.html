@@ -1,6 +1,6 @@
 <!--
 mattasatsuki @ GitHub 2025
-Aiming for a single page, no-.css website as a lightweight portfolio/landing-page
+Aiming for a single page, internal CSS and JS website as a lightweight portfolio and domain landing page
 -->
 
 <!DOCTYPE html>
@@ -23,6 +23,7 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
         <!--yeaahhh we're not having any twitter meta tags.-->
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <style> /*haha web deployment made very, very overcomplicated...*/
             html, body { /*https://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll */
                 max-width: 100%;
@@ -102,7 +103,7 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 margin-top:1vh;
                 margin-left: 19vw;
                 margin-right:19vw;
-                background: linear-gradient(rgb(86, 89, 129), #2b2d42ff);
+                background: linear-gradient(rgb(86, 89, 129), #2b2d42ff); /*replace with cool background image instead?*/
                 text-wrap: pretty; /*double check this one, chief*/
                 /*btw a float: right/left/inherit; would let text flow aorund this while justifying it to an aside*/
                 width:auto;
@@ -116,11 +117,12 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
         <script>
             $(function(){ //prepping for async. blog posting infrastructure
                 $("#blogContent").load("blog.html"); 
+                //https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file
             });
         </script>
     </head>
     <body>
-        <ul class="navbar" style="z-index:10">
+        <ul id="NOTaNavbar" class="navbar" style="z-index:10">
             <li><img src="scaled.png?" style="top:0; left:0; margin: 1.5vh; height:7vh; width:auto;"></li>
             <li style="display:none; /*make display:none; as needed for deployability*/
             position: absolute; top:0; right:0; margin: 2vh;">
@@ -161,13 +163,13 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 </button>
                 -->
                 <button id="owkQuick" style="display: block; all:unset; cursor: pointer;" 
-                    onClick="document.getElementById('ourWork').scrollIntoView();">
+                    onClick="document.getElementById('ourWorkA').scrollIntoView();">
                         <p class="select standard" style="font-size: 3vh; margin:0; margin-right:4vw; margin-top:1vh; color: #2b2d42ff;">
                         <b>Services</b>
                         </p>
                 </button>
                 <button id="srvQuick" style="display: block; all:unset; cursor: pointer;" 
-                    onClick="document.getElementById('ourServices').scrollIntoView();">
+                    onClick="document.getElementById('ourServicesA').scrollIntoView();">
                         <p class="select standard" style="font-size: 3vh; margin:0; margin-top:1vh; color: #2b2d42ff;">
                         <b>Contact Us</b>
                         </p>
@@ -188,7 +190,7 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 font-family:Arial, Helvetica, sans-serif; font-size: 17px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed lectus augue. In ac urna nibh. Vivamus facilisis fringilla est, et dapibus lacus blandit non. Aliquam ut velit non velit tristique consequat</p>
             </div>
             <div id="toFirstContent" style="position:absolute; bottom: 1vh; left: calc(50vw - 30px)">
-                <button style="all:unset; cursor: pointer;" onClick="document.getElementById('aboutUs').scrollIntoView();">
+                <button style="all:unset; cursor: pointer;" onClick="document.getElementById('aboutUsA').scrollIntoView();">
                     <img title="About Us" src="arrowDown.png?" style="height: auto; width: 60px">
                     <!--
                     button logic: https://stackoverflow.com/questions/16131988/making-an-image-act-like-a-button
@@ -198,8 +200,9 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
             </div>
         </div>
 
+        <div id="aboutUsA" style="height:10vh;"></div> <!--nyehehehe weird solution to the navbar-->
         <div id="aboutUs" style="z-index:1;">
-            <h1 class="standard content">About MOMU</h1>
+            <h1 id="aboutUs" class="standard content" style="margin-top:7px;">About MOMU</h1>
             <p class="standard content" style="margin-bottom:1vh;">
                 Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
             </p>
@@ -211,9 +214,11 @@ Aiming for a single page, no-.css website as a lightweight portfolio/landing-pag
                 </p>
             </div>
         </div>
+
         <div id="ourWork">
 
         </div>
+
         <div id="ourServices">
 
         </div>
