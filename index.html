@@ -97,12 +97,12 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
                 background: rgb(236, 236, 236); ;
             }
 
-            .blog {
+            .important {
                 /*display:flex; 
                 justify-content: center;*/
                 margin-top:1vh;
-                margin-left: 19vw;
-                margin-right:19vw;
+                margin-left: 7vw;
+                margin-right: 0;
                 background: linear-gradient(rgb(86, 89, 129), #2b2d42ff); /*replace with cool background image instead?*/
                 text-wrap: pretty; /*double check this one, chief*/
                 /*btw a float: right/left/inherit; would let text flow aorund this while justifying it to an aside*/
@@ -114,9 +114,10 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
             }
         </style>
 
+        <script src="jquery.js"></script>
         <script>
             $(function(){ //prepping for async. blog posting infrastructure
-                $("#blogContent").load("blog.html"); 
+                $("#about").load("about1.html"); 
                 //https://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file
             });
         </script>
@@ -212,17 +213,56 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
             <p class="standard content" style="margin-bottom:1vh;">
                 Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
             </p>
-            <div id="siteBlog" class="blog">
+
+            <div id="about"></div>
+
+            <div id="siteBlog" class="important">
                 <!--something be weird with top margin and idk what that is-->
-                <h1 style="display:block; text-align: center; padding-top: 2vh; font-size: max(3vw, 20px); margin-bottom: 1.2vw;">2025 Progress Report</h1>
-                <p class="content standard" style="display:block; margin-left: 5vw; margin-right: 5vw; margin-top: 0px; padding-bottom:10px; color:rgb(236, 236, 236);">
-                    Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+                <h1 style="display:block; text-align: left; padding-top: 2vh; font-size: max(3vw, 20px); margin-bottom: 0.5vw; margin-left: 3vw;">
+                    2025 Status Report
+                </h1>
+                <p class="content standard" style="display:block; margin-left: 5vw; margin-right: 10vw; margin-top: 0px; padding-bottom:15px; color:rgb(236, 236, 236);">
+                    Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                    <!--<br> <br>-->
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
                 </p>
             </div>
+
+            <p class="standard content" style="margin-bottom:1vh; margin-top:2vw;">
+                Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+            </p>
+
+            <div id="quote">
+                <h1 class="standard content" style="text-align: right; margin-left: max(10vw, 3vh); margin-left:10vw; margin-top:2vw; font-size:max(2vw, 3vh)">
+                    We strive for 
+                    <br>
+                    <b>excellence</b> and <b>quality</b> 
+                    <br>
+                    in the pursuance of products <b>anyone can use.</b>
+                </h1>
+                <h1 class="standard content" style="text-align: right; margin-left: max(10vw, 3vh); margin-top: 10px;font-size:max(1vw, 2vh)">
+                    <em>August 2025, Operational Year Opening Statement</em>
+                </h1>
+            </div>
+
+            <!--
+            <p class="standard content" style="margin-bottom:1vh; margin-top:2vw;">
+                Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+            </p>
+            -->
         </div>
 
+        <div id="ourWorkA" style="height:10vh"></div>
         <div id="ourWork">
-
+            <h1 id="ourProducts" class="standard content" style="margin-top:7px;">Our Products</h1>
+            <p class="standard content" style="margin-bottom:1vh;">
+                Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+            </p>
+            <br><br>
+            <h1 id="ourServices" class="standard content" style="margin-top:7px;">Our Services</h1>
+            <p class="standard content" style="margin-bottom:1vh;">
+                Ut non mi dignissim eros scelerisque lacinia eget a leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse vulputate neque sit amet dui vulputate tristique. Nam varius magna enim, ac feugiat tellus pellentesque sit amet. Cras velit tellus, tincidunt et cursus sit amet, feugiat non turpis. Proin sed ipsum id turpis malesuada cursus nec ut eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc porttitor est sit amet risus condimentum, id volutpat justo ornare. Nullam massa magna, pulvinar a porta ac, tempus in velit. Duis rhoncus ut metus a molestie. Ut accumsan tempus turpis, non molestie elit. Donec vitae sapien eu sapien eleifend tristique.
+            </p>
         </div>
 
         <div id="ourServices">
