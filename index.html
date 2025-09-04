@@ -85,7 +85,7 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
 
             .division {
                 width: auto;
-                height: 10vh;
+                height: 20vh;
                 position: static;
                 display: block;
                 /*margin-top: 0px; /*oml i hate css even if it's c based im going to kill i had to figure this solution out BY MYSELF*/
@@ -94,7 +94,8 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
                 padding: 0px;
                 left: 0px;
                 right:0px;
-                background: rgb(214, 214, 214);
+                /*background: rgb(214, 214, 214);*/
+                background: linear-gradient(rgb(236, 236, 236), rgb(197, 197, 197));
             }
 
             .footbar { /*taken from https://roadtogrambys-communal.cc */
@@ -212,7 +213,7 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
                 <p style="/*background-color: rgba(0, 0, 0, 0.247);*/ color:rgb(236, 236, 236);
                 font-family:Arial, Helvetica, sans-serif; font-size: 17px;">Learn more and inquire below</p>
             </div>
-            <div id="toFirstContent" style="position:absolute; bottom: 1vh; left:0;right:0; margin-inline: auto; width: fit-content;"">
+            <div id="toFirstContent" style="position:absolute; bottom: 1vh; left:0;right:0; margin-inline: auto; width: fit-content;">
                 <button style="all:unset; cursor: pointer;" onClick="document.getElementById('aboutUsA').scrollIntoView();">
                     <img title="About Us" src="arrowDown.png?" style="height: auto; width: 60px">
                     <!--
@@ -269,9 +270,10 @@ Aiming for a single page, internal CSS and JS website as a lightweight portfolio
             -->
         </div>
 
-        <div class="division" style="margin-top:5vh;">
-            <div style="position:flex; justify-content:center;">
-                
+        <br><div class="division" style="margin-top:5vh; position:relative; justify-content:center;">
+            <div style="position:absolute; bottom: 1vh; left:0;right:0; margin-inline: auto; width: fit-content;">
+                <img src="ReDirect.png?" style="margin-right: 20vw ; height:min(17vh,17vw); width:auto;">
+                <img src="PureCarbon_Solutions.png?" style="height:min(17vh,17vw); width:auto;">
             </div>
         </div>
         
